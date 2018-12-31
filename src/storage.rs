@@ -3,7 +3,6 @@ use std::fmt;
 const DEFAULT_CAPACITY: u64 = 10;
 
 pub struct Segment {
-	offset: usize,
 	bytes: Vec<u8>,
 	capacity: u64,
 }
@@ -11,14 +10,12 @@ pub struct Segment {
 impl Segment {
 	pub fn new() -> Segment {
 		Segment {
-			offset: 0,
 			bytes: Vec::new(),
 			capacity: DEFAULT_CAPACITY,
 		}
 	}
 
 	pub fn add_byte(&mut self, byte: u8) {
-		self.offset += 1;
 		self.bytes.push(byte);
 	}
 
